@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>🎮 Hub Zal Sistemi</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <h1>🎮 Hub Zal Sistemi</h1>
+  <div class="top-controls">
+  <button class="reset-all-btn" onclick="resetAllKabinet()">Bütün Kabinetləri Boşalt</button>
+</div>
+  <div id="kabinetler"></div>
+
+  <div class="report">
+    <h2>📊 Hesabat</h2>
+    <button onclick="showReport('daily')">Günlük</button>
+    <button onclick="showReport('weekly')">Həftəlik</button>
+    <button onclick="showReport('monthly')">Aylıq</button>
+    <button onclick="resetReports()">Hesabatı Sıfırla</button>
+    <div id="reportTable"></div>
+    <canvas id="reportChart" style="max-width:100%; display:none;"></canvas>
+    <div class="total-income" id="totalIncome"></div>
+  </div>
+
+  <!-- Menu Overlay -->
+  <div id="overlayMenu">
+    <div class="menu-content">
+      <button class="close-btn" onclick="closeMenu()">X</button>
+      <h3 id="menuKabinetTitle">Kabinet</h3>
+      <div class="menu-card" onclick="addOrder(currentMenuKabinet,'Çips',2)">Çips<br>2 AZN</div>
+      <div class="menu-card" onclick="addOrder(currentMenuKabinet,'Pivə',5)">Pivə<br>5 AZN</div>
+      <div class="menu-card" onclick="addOrder(currentMenuKabinet,'Çay',1)">Çay<br>1 AZN</div>
+      <div id="selectedOrders"></div>
+      <div id="menuTotal">Ümumi: 0 AZN</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

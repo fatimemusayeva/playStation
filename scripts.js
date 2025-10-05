@@ -202,7 +202,6 @@ function deleteReport(index) {
   showReport('daily');
 }
 
-// --- Hesabat sıfırla ---
 function resetReports() {
   if (confirm("Bütün hesabat məlumatlarını silmək istəyirsiniz?")) {
     reports = [];
@@ -211,7 +210,6 @@ function resetReports() {
   }
 }
 
-// --- Real-time qiymət hesablaması hər saniyə ---
 setInterval(() => {
   for (let id in sessions) {
     if (sessions[id]?.startTime && !sessions[id]?.ended) {
